@@ -6,9 +6,9 @@
 import { Order, MerchantSettings, CartItem, SauceType } from '../types';
 
 export const DEFAULT_SETTINGS: MerchantSettings = {
-  shopName: 'Migi Dimsum',
-  shopAddress: 'Margahayu Raya, Bandung, Indonesia',
-  whatsappNumber: '6282118331808', // Default mock number, user can change this in settings
+  shopName: 'Dimsum Kiosk & Co',
+  shopAddress: 'Ruko Culinary Square No. 12, Jakarta',
+  whatsappNumber: '6281234567890', // Default mock number, user can change this in settings
   taxRate: 0.1, // 10% tax
   serviceFee: 2000, // Rp 2.000 flat service fee
   currencySymbol: 'Rp',

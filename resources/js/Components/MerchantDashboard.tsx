@@ -142,7 +142,7 @@ export default function MerchantDashboard({
   const completedOrders = orders.filter(o => o.orderStatus === 'completed');
 
   return (
-    <div id="merchant_dashboard" className="bg-gray-100 border border-gray-500 rounded-3xl p-5 shadow-xl flex flex-col h-[780px] text-gray-800 relative">
+    <div id="merchant_dashboard" className="bg-gray-100 border border-gray-200 rounded-3xl p-5 shadow-xl flex flex-col h-[780px] text-gray-800 relative">
       
       {/* Sleek Custom Toast Notification */}
       {toastMessage && (
@@ -157,10 +157,10 @@ export default function MerchantDashboard({
 
       {!isAuthenticated ? (
         <div className="flex-1 flex flex-col justify-center items-center py-2 select-none">
-          <div className="max-w-[340px] w-full bg-white rounded-3xl border border-gray-500 p-6 shadow-lg text-center flex flex-col justify-between h-[645px] my-auto">
+          <div className="max-w-[340px] w-full bg-white rounded-3xl border border-gray-200 p-6 shadow-xs text-center flex flex-col justify-between h-[645px] my-auto">
             {/* Padlock Icon & Title */}
             <div className="space-y-1.5 mt-2">
-              <div className="mx-auto w-11 h-11 bg-red-50 text-red-600 rounded-2xl flex items-center justify-center shadow-lg">
+              <div className="mx-auto w-11 h-11 bg-red-50 text-red-600 rounded-2xl flex items-center justify-center shadow-xs">
                 <Lock className="w-5 h-5 animate-pulse" />
               </div>
               <h2 className="text-sm font-black tracking-tight text-gray-950 uppercase mt-2">
@@ -199,7 +199,7 @@ export default function MerchantDashboard({
                   key={num}
                   type="button"
                   onClick={() => handlePinKeyPress(num)}
-                  className="w-12 h-12 rounded-2xl bg-gray-50 hover:bg-red-50 active:bg-red-100 text-gray-900 hover:text-red-700 font-mono text-base font-extrabold border border-gray-500/80 hover:border-red-200/50 shadow-lg transition-all flex items-center justify-center mx-auto"
+                  className="w-12 h-12 rounded-2xl bg-gray-50 hover:bg-red-50 active:bg-red-100 text-gray-900 hover:text-red-700 font-mono text-base font-extrabold border border-gray-200/80 hover:border-red-200/50 shadow-xs transition-all flex items-center justify-center mx-auto"
                 >
                   {num}
                 </button>
@@ -208,7 +208,7 @@ export default function MerchantDashboard({
               <button
                 type="button"
                 onClick={() => handlePinKeyPress('clear')}
-                className="w-12 h-12 rounded-2xl bg-gray-50 hover:bg-gray-100 text-gray-500 active:bg-gray-200 text-[10px] font-black border border-gray-500/80 shadow-lg transition-all flex items-center justify-center mx-auto"
+                className="w-12 h-12 rounded-2xl bg-gray-50 hover:bg-gray-100 text-gray-500 active:bg-gray-200 text-[10px] font-black border border-gray-200/80 shadow-xs transition-all flex items-center justify-center mx-auto"
               >
                 C
               </button>
@@ -216,7 +216,7 @@ export default function MerchantDashboard({
               <button
                 type="button"
                 onClick={() => handlePinKeyPress('0')}
-                className="w-12 h-12 rounded-2xl bg-gray-50 hover:bg-red-50 active:bg-red-100 text-gray-900 hover:text-red-700 font-mono text-base font-extrabold border border-gray-500/80 hover:border-red-200/50 shadow-lg transition-all flex items-center justify-center mx-auto"
+                className="w-12 h-12 rounded-2xl bg-gray-50 hover:bg-red-50 active:bg-red-100 text-gray-900 hover:text-red-700 font-mono text-base font-extrabold border border-gray-200/80 hover:border-red-200/50 shadow-xs transition-all flex items-center justify-center mx-auto"
               >
                 0
               </button>
@@ -224,7 +224,7 @@ export default function MerchantDashboard({
               <button
                 type="button"
                 onClick={() => handlePinKeyPress('back')}
-                className="w-12 h-12 rounded-2xl bg-gray-50 hover:bg-gray-100 text-gray-500 active:bg-gray-200 text-[10px] font-black border border-gray-500/80 shadow-lg transition-all flex items-center justify-center mx-auto"
+                className="w-12 h-12 rounded-2xl bg-gray-50 hover:bg-gray-100 text-gray-500 active:bg-gray-200 text-[10px] font-black border border-gray-200/80 shadow-xs transition-all flex items-center justify-center mx-auto"
               >
                 ⌫
               </button>
@@ -240,14 +240,14 @@ export default function MerchantDashboard({
       ) : (
         <>
           {/* Top dashboard header with logo */}
-      <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center border-b border-gray-500 pb-4 mb-4 gap-4">
+      <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center border-b border-gray-200 pb-4 mb-4 gap-4">
         <div className="flex items-center gap-3">
-          <div className="w-10 h-10 rounded-xl bg-red-600 flex items-center justify-center text-white text-lg font-bold shadow-lg">
+          <div className="w-10 h-10 rounded-xl bg-red-600 flex items-center justify-center text-white text-lg font-bold shadow-xs">
             🍽️
           </div>
           <div>
             <h1 className="text-base font-extrabold tracking-tight text-gray-900 flex items-center gap-2">
-              Migi-Dimsum Portal <span className="text-[10px] bg-red-50 border border-red-100 text-red-600 font-mono px-2 py-0.5 rounded-full font-black tracking-wider uppercase">MASTER HUB</span>
+              KDS & Merchant Portal <span className="text-[10px] bg-red-50 border border-red-100 text-red-600 font-mono px-2 py-0.5 rounded-full font-black tracking-wider uppercase">MASTER HUB</span>
             </h1>
             <p className="text-xs text-gray-500 font-medium">{settings.shopName} - Panel Administrasi Dapur</p>
           </div>
@@ -259,7 +259,7 @@ export default function MerchantDashboard({
             onClick={() => setActiveTab('active')}
             className={`flex items-center gap-1.5 py-1.5 px-3 rounded-lg text-xs font-extrabold transition-all whitespace-nowrap uppercase tracking-wider ${
               activeTab === 'active'
-                ? 'bg-red-600 text-white shadow-lg'
+                ? 'bg-red-600 text-white shadow-xs'
                 : 'text-gray-600 hover:text-gray-900'
             }`}
           >
@@ -270,7 +270,7 @@ export default function MerchantDashboard({
             onClick={() => setActiveTab('completed')}
             className={`flex items-center gap-1.5 py-1.5 px-3 rounded-lg text-xs font-extrabold transition-all whitespace-nowrap uppercase tracking-wider ${
               activeTab === 'completed'
-                ? 'bg-red-600 text-white shadow-lg'
+                ? 'bg-red-600 text-white shadow-xs'
                 : 'text-gray-600 hover:text-gray-900'
             }`}
           >
@@ -281,7 +281,7 @@ export default function MerchantDashboard({
             onClick={() => setActiveTab('analytics')}
             className={`flex items-center gap-1.5 py-1.5 px-3 rounded-lg text-xs font-extrabold transition-all whitespace-nowrap uppercase tracking-wider ${
               activeTab === 'analytics'
-                ? 'bg-red-600 text-white shadow-lg'
+                ? 'bg-red-600 text-white shadow-xs'
                 : 'text-gray-600 hover:text-gray-900'
             }`}
           >
@@ -292,7 +292,7 @@ export default function MerchantDashboard({
             onClick={() => setActiveTab('settings')}
             className={`flex items-center gap-1.5 py-1.5 px-3 rounded-lg text-xs font-extrabold transition-all whitespace-nowrap uppercase tracking-wider ${
               activeTab === 'settings'
-                ? 'bg-red-600 text-white shadow-lg'
+                ? 'bg-red-600 text-white shadow-xs'
                 : 'text-gray-600 hover:text-gray-900'
             }`}
           >
@@ -306,7 +306,7 @@ export default function MerchantDashboard({
               showToast('🔒 Dashboard terkunci. Silakan masukkan PIN kembali.');
             }}
             title="Kunci Dashboard (Keluar)"
-            className="flex items-center justify-center p-1.5 bg-gray-100 hover:bg-red-50 text-gray-500 hover:text-red-600 rounded-lg border border-gray-500 transition-all hover:border-red-100"
+            className="flex items-center justify-center p-1.5 bg-gray-100 hover:bg-red-50 text-gray-500 hover:text-red-600 rounded-lg border border-gray-200 transition-all hover:border-red-100"
           >
             <Lock className="w-3.5 h-3.5" />
           </button>
@@ -334,12 +334,12 @@ export default function MerchantDashboard({
                   return (
                     <div 
                       key={order.id} 
-                      className={`border p-4 rounded-2xl flex flex-col justify-between transition-all relative overflow-hidden bg-white shadow-lg ${
+                      className={`border p-4 rounded-2xl flex flex-col justify-between transition-all relative overflow-hidden bg-white shadow-xs ${
                         order.orderStatus === 'ready' 
                           ? 'border-green-500 shadow-[0_4px_12px_rgba(34,197,94,0.08)] bg-green-50/20'
                           : order.orderStatus === 'cooking'
                           ? 'border-amber-500 bg-amber-50/10'
-                          : 'border-gray-500'
+                          : 'border-gray-200'
                       }`}
                     >
                       {/* Top metadata info */}
@@ -378,7 +378,7 @@ export default function MerchantDashboard({
                             .join(', ');
 
                           return (
-                            <div key={idx} className="bg-gray-50 p-2.5 rounded-xl border border-gray-500/80 text-xs">
+                            <div key={idx} className="bg-gray-50 p-2.5 rounded-xl border border-gray-200/80 text-xs">
                               <div className="flex justify-between font-extrabold text-gray-900 mb-1">
                                 <span>Dimsum {SIZE_INFO[item.size]?.name ?? item.size} ({item.pcs} pcs)</span>
                                 <span className="font-mono text-gray-500 font-bold">x{item.quantity}</span>
@@ -405,7 +405,7 @@ export default function MerchantDashboard({
 
                       {/* Payment Status Adjuster for Cash orders */}
                       {order.paymentStatus === 'unpaid' && (
-                        <div className="bg-amber-50 p-2 rounded-xl border border-amber-200 text-xs flex justify-between items-center mb-3 shadow-lg">
+                        <div className="bg-amber-50 p-2 rounded-xl border border-amber-200 text-xs flex justify-between items-center mb-3 shadow-xs">
                           <span className="text-amber-800 font-extrabold">Bayar Tunai di Kasir</span>
                           <button
                             onClick={() => {
@@ -434,7 +434,7 @@ export default function MerchantDashboard({
                               showToast(`Struk #${order.orderNumber} dikirim ke bluetooth printer!`);
                             }}
                             title="Cetak Struk"
-                            className="p-1.5 bg-gray-100 hover:bg-gray-200 text-red-600 hover:text-red-700 rounded-lg border border-gray-500 transition-all shadow-lg"
+                            className="p-1.5 bg-gray-100 hover:bg-gray-200 text-red-600 hover:text-red-700 rounded-lg border border-gray-200 transition-all shadow-xs"
                           >
                             <Printer className="w-4 h-4" />
                           </button>
@@ -449,7 +449,7 @@ export default function MerchantDashboard({
                                 showToast(`Notifikasi dikirim ke WA pelanggan!`);
                               }}
                               title="Kirim Notifikasi WA Siap Saji"
-                              className="p-1.5 bg-green-50 hover:bg-green-100 text-green-600 rounded-lg border border-green-200 transition-all shadow-lg"
+                              className="p-1.5 bg-green-50 hover:bg-green-100 text-green-600 rounded-lg border border-green-200 transition-all shadow-xs"
                             >
                               <Send className="w-4 h-4" />
                             </button>
@@ -462,7 +462,7 @@ export default function MerchantDashboard({
                                 onUpdateOrderStatus(order.id, 'cooking');
                                 showToast(`Order #${order.orderNumber} mulai dimasak!`);
                               }}
-                              className="flex items-center gap-1 bg-amber-500 hover:bg-amber-600 text-white text-xs font-black py-1.5 px-3 rounded-lg transition-all shadow-lg uppercase tracking-wider"
+                              className="flex items-center gap-1 bg-amber-500 hover:bg-amber-600 text-white text-xs font-black py-1.5 px-3 rounded-lg transition-all shadow-xs uppercase tracking-wider"
                             >
                               <Play className="w-3 h-3 fill-white" /> Masak
                             </button>
@@ -476,7 +476,7 @@ export default function MerchantDashboard({
                                 onTriggerPrint(order);
                                 showToast(`Order #${order.orderNumber} SIAP SAJI! Struk dicetak.`);
                               }}
-                              className="flex items-center gap-1 bg-green-600 hover:bg-green-700 text-white text-xs font-black py-1.5 px-3 rounded-lg transition-all shadow-lg uppercase tracking-wider"
+                              className="flex items-center gap-1 bg-green-600 hover:bg-green-700 text-white text-xs font-black py-1.5 px-3 rounded-lg transition-all shadow-xs uppercase tracking-wider"
                             >
                               <Check className="w-3.5 h-3.5 stroke-[3px]" /> Siap Saji
                             </button>
@@ -488,7 +488,7 @@ export default function MerchantDashboard({
                                 onUpdateOrderStatus(order.id, 'completed');
                                 showToast(`Order #${order.orderNumber} selesai disajikan.`);
                               }}
-                              className="flex items-center gap-1 bg-red-600 hover:bg-red-700 text-white text-xs font-black py-1.5 px-3 rounded-lg transition-all shadow-lg uppercase tracking-wider"
+                              className="flex items-center gap-1 bg-red-600 hover:bg-red-700 text-white text-xs font-black py-1.5 px-3 rounded-lg transition-all shadow-xs uppercase tracking-wider"
                             >
                               Selesaikan Antrean
                             </button>
@@ -517,7 +517,7 @@ export default function MerchantDashboard({
                 <p className="text-xs text-gray-500 mt-1 max-w-[280px] font-medium">Selesaikan antrean aktif di tab utama agar riwayat pembayaran terekam di sini.</p>
               </div>
             ) : (
-              <div className="overflow-x-auto rounded-2xl border border-gray-500">
+              <div className="overflow-x-auto rounded-2xl border border-gray-200">
                 <table className="w-full text-left text-xs">
                   <thead className="bg-gray-200 text-gray-700 uppercase font-extrabold text-[10px]">
                     <tr>
@@ -536,7 +536,7 @@ export default function MerchantDashboard({
                       const orderDate = new Date(order.createdAt).toLocaleDateString('id-ID', { day: 'numeric', month: 'short' });
 
                       return (
-                        <tr key={order.id} className="border-b border-gray-500 hover:bg-white bg-gray-50/50 transition-all font-semibold text-gray-800">
+                        <tr key={order.id} className="border-b border-gray-200 hover:bg-white bg-gray-50/50 transition-all font-semibold text-gray-800">
                           <td className="p-3 font-mono font-extrabold text-red-600">#{order.orderNumber}</td>
                           <td className="p-3 font-extrabold text-gray-900">{order.customerName}</td>
                           <td className="p-3">
@@ -582,7 +582,7 @@ export default function MerchantDashboard({
         {activeTab === 'settings' && (
           <div className="space-y-6">
             {/* Sub-tab Selection */}
-            <div className="flex border-b border-gray-500">
+            <div className="flex border-b border-gray-200">
               <button
                 onClick={() => setSettingsSubTab('basic')}
                 className={`py-2.5 px-5 text-xs font-black uppercase tracking-wider border-b-2 transition-all ${
@@ -608,7 +608,7 @@ export default function MerchantDashboard({
             {settingsSubTab === 'basic' ? (
               <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
                 {/* Store Information Form */}
-                <div className="bg-white p-5 rounded-2xl border border-gray-500 space-y-4 shadow-lg">
+                <div className="bg-white p-5 rounded-2xl border border-gray-200 space-y-4 shadow-xs">
                   <h3 className="text-sm font-extrabold text-gray-900 border-b border-gray-100 pb-2 uppercase flex items-center gap-2">
                     <Store className="w-4 h-4 text-red-600" /> Informasi Outlet Utama
                   </h3>
@@ -621,7 +621,7 @@ export default function MerchantDashboard({
                         required
                         value={shopName}
                         onChange={(e) => setShopName(e.target.value)}
-                        className="w-full bg-gray-50 border border-gray-500 focus:border-red-600 rounded-xl px-3 py-2 text-xs text-gray-900 focus:outline-none shadow-lg font-semibold"
+                        className="w-full bg-gray-50 border border-gray-200 focus:border-red-600 rounded-xl px-3 py-2 text-xs text-gray-900 focus:outline-none shadow-xs font-semibold"
                       />
                     </div>
 
@@ -632,7 +632,7 @@ export default function MerchantDashboard({
                         required
                         value={shopAddress}
                         onChange={(e) => setShopAddress(e.target.value)}
-                        className="w-full bg-gray-50 border border-gray-500 focus:border-red-600 rounded-xl px-3 py-2 text-xs text-gray-900 focus:outline-none shadow-lg font-semibold"
+                        className="w-full bg-gray-50 border border-gray-200 focus:border-red-600 rounded-xl px-3 py-2 text-xs text-gray-900 focus:outline-none shadow-xs font-semibold"
                       />
                     </div>
 
@@ -643,7 +643,7 @@ export default function MerchantDashboard({
                         required
                         value={whatsappNumber}
                         onChange={(e) => setWhatsappNumber(e.target.value)}
-                        className="w-full bg-gray-50 border border-gray-500 focus:border-red-600 rounded-xl px-3 py-2 text-xs text-gray-900 focus:outline-none shadow-lg font-semibold"
+                        className="w-full bg-gray-50 border border-gray-200 focus:border-red-600 rounded-xl px-3 py-2 text-xs text-gray-900 focus:outline-none shadow-xs font-semibold"
                       />
                       <p className="text-[9px] text-gray-400 font-bold">Isi dengan kode negara tanpa +, contoh: 6281234567890</p>
                     </div>
@@ -655,7 +655,7 @@ export default function MerchantDashboard({
                         required
                         value={serviceFee}
                         onChange={(e) => setServiceFee(e.target.value)}
-                        className="w-full bg-gray-50 border border-gray-500 focus:border-red-600 rounded-xl px-3 py-2 text-xs text-gray-900 focus:outline-none shadow-lg font-mono font-bold"
+                        className="w-full bg-gray-50 border border-gray-200 focus:border-red-600 rounded-xl px-3 py-2 text-xs text-gray-900 focus:outline-none shadow-xs font-mono font-bold"
                       />
                     </div>
 
@@ -668,7 +668,7 @@ export default function MerchantDashboard({
                         required
                         value={merchantPin}
                         onChange={(e) => setMerchantPin(e.target.value.replace(/[^0-9]/g, ''))}
-                        className="w-full bg-gray-50 border border-gray-500 focus:border-red-600 rounded-xl px-3 py-2 text-xs text-gray-900 focus:outline-none shadow-lg font-mono font-bold"
+                        className="w-full bg-gray-50 border border-gray-200 focus:border-red-600 rounded-xl px-3 py-2 text-xs text-gray-900 focus:outline-none shadow-xs font-mono font-bold"
                         placeholder="1234"
                       />
                       <p className="text-[9px] text-gray-400 font-bold">PIN numeric untuk membuka panel KDS & Merchant Hub.</p>
@@ -684,7 +684,7 @@ export default function MerchantDashboard({
                 </div>
 
                 {/* Inventory / Sauce Stock Controls */}
-                <div className="bg-white p-5 rounded-2xl border border-gray-500 space-y-4 shadow-lg">
+                <div className="bg-white p-5 rounded-2xl border border-gray-200 space-y-4 shadow-xs">
                   <h3 className="text-sm font-extrabold text-gray-900 border-b border-gray-100 pb-2 uppercase flex items-center gap-2">
                     <Sliders className="w-4 h-4 text-red-600" /> Manajemen Stok Bahan / Saus
                   </h3>
@@ -703,7 +703,7 @@ export default function MerchantDashboard({
                           key={sauceId} 
                           className={`flex items-center justify-between p-3.5 rounded-xl border transition-all ${
                             isAvailable 
-                              ? 'bg-gray-50 border-gray-500/80 shadow-lg' 
+                              ? 'bg-gray-50 border-gray-200/80 shadow-xs' 
                               : 'bg-red-50/50 border-red-200/60'
                           }`}
                         >
@@ -720,7 +720,7 @@ export default function MerchantDashboard({
                               onToggleSauce(sauceId);
                               showToast(`Stok saus ${sInfo.name.split(' ')[1]} diperbarui.`);
                             }}
-                            className={`text-xs font-extrabold px-3 py-1.5 rounded-lg border transition-all shadow-lg ${
+                            className={`text-xs font-extrabold px-3 py-1.5 rounded-lg border transition-all shadow-xs ${
                               isAvailable
                                 ? 'border-green-200 bg-green-50 text-green-700 hover:bg-green-100'
                                 : 'border-red-200 bg-red-50 text-red-700 hover:bg-red-100'
@@ -739,7 +739,7 @@ export default function MerchantDashboard({
                 {/* Integration Configurations */}
                 <div className="space-y-4">
                   {/* Laravel API Connection Settings */}
-                  <div className="bg-white p-5 rounded-2xl border border-gray-500 space-y-4 shadow-lg text-left">
+                  <div className="bg-white p-5 rounded-2xl border border-gray-200 space-y-4 shadow-xs text-left">
                     <h3 className="text-sm font-extrabold text-gray-950 border-b border-gray-100 pb-2 uppercase flex items-center gap-2">
                       <Globe className="w-4 h-4 text-red-600" /> Koneksi Laravel API Backend
                     </h3>
@@ -770,7 +770,7 @@ export default function MerchantDashboard({
                           value={laravelApiUrl}
                           onChange={(e) => setLaravelApiUrl(e.target.value)}
                           placeholder="e.g. http://127.0.0.1:8000"
-                          className="w-full bg-gray-50 border border-gray-500 focus:border-red-600 rounded-xl px-3 py-2 text-xs text-gray-950 font-mono disabled:opacity-50"
+                          className="w-full bg-gray-50 border border-gray-200 focus:border-red-600 rounded-xl px-3 py-2 text-xs text-gray-950 font-mono disabled:opacity-50"
                         />
                       </div>
 
@@ -782,7 +782,7 @@ export default function MerchantDashboard({
                           value={laravelApiToken}
                           onChange={(e) => setLaravelApiToken(e.target.value)}
                           placeholder="Masukkan token jika API dilindungi Sanctum/Passport"
-                          className="w-full bg-gray-50 border border-gray-500 focus:border-red-600 rounded-xl px-3 py-2 text-xs text-gray-950 font-mono disabled:opacity-50"
+                          className="w-full bg-gray-50 border border-gray-200 focus:border-red-600 rounded-xl px-3 py-2 text-xs text-gray-950 font-mono disabled:opacity-50"
                         />
                       </div>
 
@@ -806,7 +806,7 @@ export default function MerchantDashboard({
                               showToast('❌ Gagal terhubung! Pastikan backend Laravel Anda aktif.');
                             }
                           }}
-                          className="w-full py-1.5 bg-gray-100 hover:bg-gray-200 text-gray-700 text-[10px] font-black uppercase tracking-wider rounded-xl border border-gray-500 transition-colors"
+                          className="w-full py-1.5 bg-gray-100 hover:bg-gray-200 text-gray-700 text-[10px] font-black uppercase tracking-wider rounded-xl border border-gray-200 transition-colors"
                         >
                           Tes Koneksi API
                         </button>
@@ -815,7 +815,7 @@ export default function MerchantDashboard({
                   </div>
 
                   {/* WhatsApp Gateway Config */}
-                  <div className="bg-white p-5 rounded-2xl border border-gray-500 space-y-4 shadow-lg text-left">
+                  <div className="bg-white p-5 rounded-2xl border border-gray-200 space-y-4 shadow-xs text-left">
                     <h3 className="text-sm font-extrabold text-gray-950 border-b border-gray-100 pb-2 uppercase flex items-center gap-2">
                       <Send className="w-4 h-4 text-green-600" /> WhatsApp Gateway Otomatis
                     </h3>
@@ -826,7 +826,7 @@ export default function MerchantDashboard({
                         <select
                           value={whatsappMode}
                           onChange={(e: any) => setWhatsappMode(e.target.value)}
-                          className="w-full bg-gray-50 border border-gray-500 focus:border-red-600 rounded-xl px-3 py-2 text-xs text-gray-900 font-semibold"
+                          className="w-full bg-gray-50 border border-gray-200 focus:border-red-600 rounded-xl px-3 py-2 text-xs text-gray-900 font-semibold"
                         >
                           <option value="direct">Direct (WhatsApp Web Client/App Link)</option>
                           <option value="fonnte">Fonnte (Gateway API Langsung)</option>
@@ -843,7 +843,7 @@ export default function MerchantDashboard({
                               value={whatsappGatewayToken}
                               onChange={(e) => setWhatsappGatewayToken(e.target.value)}
                               placeholder="Masukkan token Fonnte Anda"
-                              className="w-full bg-gray-50 border border-gray-500 focus:border-red-600 rounded-xl px-3 py-2 text-xs text-gray-950 font-mono"
+                              className="w-full bg-gray-50 border border-gray-200 focus:border-red-600 rounded-xl px-3 py-2 text-xs text-gray-950 font-mono"
                             />
                           </div>
                           <div className="space-y-1">
@@ -853,7 +853,7 @@ export default function MerchantDashboard({
                               value={whatsappGatewayUrl}
                               onChange={(e) => setWhatsappGatewayUrl(e.target.value)}
                               placeholder="https://api.fonnte.com/send"
-                              className="w-full bg-gray-50 border border-gray-500 focus:border-red-600 rounded-xl px-3 py-2 text-xs text-gray-950 font-mono"
+                              className="w-full bg-gray-50 border border-gray-200 focus:border-red-600 rounded-xl px-3 py-2 text-xs text-gray-950 font-mono"
                             />
                           </div>
                         </>
@@ -877,7 +877,7 @@ export default function MerchantDashboard({
                 </div>
 
                 {/* Laravel Code Blueprint & Guides */}
-                <div className="bg-white p-5 rounded-2xl border border-gray-500 space-y-4 shadow-lg text-left h-[590px] flex flex-col justify-between">
+                <div className="bg-white p-5 rounded-2xl border border-gray-200 space-y-4 shadow-xs text-left h-[590px] flex flex-col justify-between">
                   <div>
                     <h3 className="text-sm font-extrabold text-gray-950 border-b border-gray-100 pb-2 uppercase flex items-center gap-2">
                       <Code className="w-4 h-4 text-indigo-600" /> Blueprint Controller Laravel
