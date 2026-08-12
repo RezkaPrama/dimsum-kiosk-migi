@@ -65,7 +65,7 @@ export default function CustomerKiosk({ settings, onSubmitOrder, orders, activeC
   // Reset customizer
   const resetCustomizer = () => {
     const firstAvail = (Object.keys(SAUCE_INFO) as SauceType[]).find(s => availableSauces[s]) || 'original';
-    const firstSizeId = Object.keys(SIZE_INFO)[0] || 'small';
+    const firstSizeId = (Object.keys(SIZE_INFO)[0] as DimsumSize) || 'small';
     const pcs = SIZE_INFO[firstSizeId]?.pcs ?? 3;
     setSelectedSize(firstSizeId);
     setItemPcs(pcs);
@@ -331,7 +331,7 @@ export default function CustomerKiosk({ settings, onSubmitOrder, orders, activeC
                               <button
                                 key={`preset-${sizeInfo.id}-${sauceId}`}
                                 disabled={!isAvailable}
-                                onClick={() => handleAddPresetToCart(sizeInfo.id, sauceId)}
+                                onClick={() => handleAddPresetToCart(sizeInfo.id as DimsumSize, sauceId)}
                                 className={`py-1 px-1.5 rounded-lg border text-center text-[9px] font-bold transition-all ${
                                   !isAvailable
                                     ? 'opacity-40 cursor-not-allowed bg-gray-50 border-gray-100 text-gray-400'
@@ -347,7 +347,7 @@ export default function CustomerKiosk({ settings, onSubmitOrder, orders, activeC
                     </div>
                     <button
                       onClick={() => {
-                        handleSizeChange(sizeInfo.id);
+                        handleSizeChange(sizeInfo.id as DimsumSize);
                         setScreen('customize');
                       }}
                       className="mt-3 w-full bg-red-600 hover:bg-red-700 active:scale-[0.98] text-white text-xs font-bold py-2 rounded-xl transition-all shadow-md flex items-center justify-center gap-1.5 uppercase tracking-wider"
@@ -393,7 +393,7 @@ export default function CustomerKiosk({ settings, onSubmitOrder, orders, activeC
                 <ArrowLeft className="w-4 h-4" />
               </button>
               <div>
-                <h3 className="font-extrabold text-sm text-gray-900">Drizzler Studio</h3>
+                <h3 className="font-extrabold text-sm text-gray-900">RezkaPrama Studio</h3>
                 <p className="text-[10px] text-gray-500 font-medium">Custom saus per butir dimsum Anda!</p>
               </div>
             </div>
